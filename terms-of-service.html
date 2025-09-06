@@ -117,10 +117,23 @@
 </head>
 <body>
     <div class="header">
-        <div class="app-icon">🦋</div>
+        <!-- 🦋 LOGO: Your actual Compa logo from GitHub Pages -->
+        <img src="https://daviddelafuente.github.io/compa-legal/compa-logo.png" alt="Compa Logo" style="width: 80px; height: 80px; margin-bottom: 10px; border-radius: 16px;" id="compa-logo">
+        
+        <!-- Fallback emoji if logo doesn't load -->
+        <div class="app-icon" id="fallback-icon" style="display: none;">🦋</div>
+        
         <h1>Compa Terms of Service</h1>
         <p style="color: #666; margin: 0;">Agreement for using your habit tracking companion</p>
     </div>
+    
+    <script>
+        // Show fallback emoji if logo fails to load
+        document.getElementById('compa-logo').onerror = function() {
+            this.style.display = 'none';
+            document.getElementById('fallback-icon').style.display = 'block';
+        };
+    </script>
 
     <div class="important-notice">
         <strong>⚠️ Important:</strong> By downloading, installing, or using Compa, you agree to be bound by these Terms of Service. If you don't agree with any part of these terms, please don't use our app.
