@@ -130,10 +130,23 @@
 </head>
 <body>
     <div class="header">
-        <div class="app-icon">🦋</div>
+        <!-- 🦋 LOGO: Your actual Compa logo from GitHub Pages -->
+        <img src="https://daviddelafuente.github.io/compa-legal/compa-logo.png" alt="Compa Logo" style="width: 80px; height: 80px; margin-bottom: 10px; border-radius: 16px;" id="compa-logo">
+        
+        <!-- Fallback emoji if logo doesn't load -->
+        <div class="app-icon" id="fallback-icon" style="display: none;">🦋</div>
+        
         <h1>Compa Privacy Policy</h1>
         <p style="color: #666; margin: 0;">Your habit tracking companion that respects your privacy</p>
     </div>
+    
+    <script>
+        // Show fallback emoji if logo fails to load
+        document.getElementById('compa-logo').onerror = function() {
+            this.style.display = 'none';
+            document.getElementById('fallback-icon').style.display = 'block';
+        };
+    </script>
 
     <div class="highlight-box">
         <h3><span class="privacy-icon">🔒</span>Privacy First Approach</h3>
